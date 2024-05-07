@@ -7,11 +7,34 @@
 
     <div class="pt-2">
       @if( showContent() ) {
-        <p>Hola Mundo</p>
+      <p>Hola Mundo</p>
       } @else {
-        <p>**********</p>
+      <p>**********</p>
       }
     </div>
   </div>
 
+  <!-- ngInf @switch  -->
+  <div class="bg-white rounded shadow p-10">
+    @switch (grade()) {
+      @case ('A') {
+        <p class="text-2xl font-bold mb-5">Arriba de 90</p>
+      }
+      @case ('B') {
+        <p class="text-2xl font-bold mb-5">Arriba de 80</p>
+      }
+      @case ('C') {
+        <p class="text-2xl font-bold mb-5">Arriba de 70</p>
+      }
+      @default {
+        <p class="text-2xl font-bold mb-5">Reprobado</p>
+      }
+    }
+
+    <button (click)="setGrade('A')" class="p-2 bg-blue-500 rounded text-white m-1">A</button>
+    <button (click)="setGrade('B')" class="p-2 bg-blue-500 rounded text-white m-1">B</button>
+    <button (click)="setGrade('C')" class="p-2 bg-blue-500 rounded text-white m-1">C</button>
+    <button (click)="setGrade('F')" class="p-2 bg-blue-500 rounded text-white m-1">F</button>
+
+  </div>
 </section>
