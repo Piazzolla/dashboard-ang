@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { routes } from '../../app.routes';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-side-menu',
   standalone: true,
   imports: [
-    CommonModule,
+    CommonModule, RouterModule
   ],
   templateUrl: "./side-menu.componet.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
