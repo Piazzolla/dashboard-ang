@@ -4,6 +4,7 @@ import { routes } from '../../app.routes';
 
 
 import { RouterModule } from '@angular/router';
+import { TitleComponent } from '@shared/title/title.component';
 
 @Component({
   selector: 'app-side-menu',

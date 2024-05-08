@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { booleanAttribute, ChangeDetectionStrategy, Component, Input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-title',
@@ -7,7 +7,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [
     CommonModule,
   ],
-  templateUrl: './title.component.html',
+  // template: `<h1 class="text-3xl mb-5">{{title }} - {{withShadow}}</h1>`,
+  template: `<h1 class="text-3xl mb-5">{{title }}</h1>`,
   styles: `
     :host {
       display: block;
@@ -15,4 +16,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TitleComponent { }
+
+export class TitleComponent {
+  // title = signal<String>('Control Flow')
+  @Input({ required: true}) title!: string;
+  @Input({ transform: booleanAttribute}) withShadow: boolean = false;
+ }
